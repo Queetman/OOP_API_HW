@@ -7,8 +7,7 @@ class Student:
         self.courses_in_progress = []
         self.grades = {}
         self.grade_count =0
-        
-    
+          
     def add_course(self,course_name):
         self.courses_in_progress.append(course_name)
         self.grades[course_name] =0
@@ -43,8 +42,7 @@ class Mentor:
     def __init__(self, name, surname):
         self.name = name
         self.surname = surname
-        self.courses_attached = []
-        
+        self.courses_attached = []      
         
     def add_course (self,course_name):
         self.courses_attached.append(course_name)       
@@ -59,7 +57,6 @@ class Lecturer(Mentor):
     def __str__(self):
         
         return f" Имя: {self.name} \n Фамилия {self.surname} \n Средняя оценка за лекции:{self.__get_avg_grade()} "
-
  
     def add_grade (self, course, grade):
         if course in self.grades:
@@ -102,14 +99,13 @@ lect_1= Lecturer("Ture","Lex")
 lect_1.add_course('Java')
 lect_1.add_course('c++')
 
-
 #print(lect_1)
+
 
 lect_2= Lecturer("Bo","James")
 lect_2.add_course('Python')
 
 #print(lect_2)
-
 
 student_1 = Student('Ostap', 'Bender', 'Male')
 
@@ -151,6 +147,5 @@ rev_1.rate_hw(student_1,'Python', 7)
 
 rev_1.rate_hw(student_1,'Paddington', 7)# не существует
 rev_2.rate_hw(student_1,'Java', 5) # не сходится 
-
 
 print(student_1)
